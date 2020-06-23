@@ -1,0 +1,75 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+    <title>{{Teams.Team}}</title>
+  </head>
+  <body>
+    
+    <section class="contactus" id="contact" >
+  <div class="container headings text-center">
+    <h1 class="text-center font-weight-bold"> ITSP Team {{Teams.Team}}</h1>
+    <p class="text-center text-capitalize pt-1"> Team {{Teams.Team}} has successfully registered.</p>
+    <p>Data are arranged in same order as you filled in the form.</p>
+  </div>
+
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-md-2 offset-1">
+  <form method="post" action="/form">
+  {% csrf_token %}
+  <div class="form-group">
+   
+    <input type="text" class="form-control" name="teamname" aria-describedby="emailHelp" disabled autocomplete="off" placeholder="{{Teams.Team}}">
+    
+  </div>
+   <div class="form-group">
+   
+    <input type="text" class="form-control" name="mem1" aria-describedby="emailHelp" disabled autocomplete="off" placeholder="{{Teams.memeber1}}">
+    
+  </div>
+   <div class="form-group">
+   
+    <input type="text" class="form-control" name="mem2" aria-describedby="emailHelp" disabled autocomplete="off" placeholder="{{Teams.memeber2}}">
+    
+  </div>
+  <div class="form-group">
+   
+    <input type="email" class="form-control" name="Email1" aria-describedby="emailHelp" disabled autocomplete="off" placeholder="{{Teams.email1}}">
+    
+  </div>
+  <div class="form-group">
+   
+    <input type="email" class="form-control" name="Email2" aria-describedby="emailHelp" disabled autocomplete="off" placeholder="{{Teams.email2}}">
+    
+  </div>
+  <div class="form-group">
+   <div class="form-group">
+   
+    <input type="text" class="form-control" name="topic" aria-describedby="emailHelp" disabled autocomplete="off" placeholder="{{Teams.Topic}}">
+    
+  </div>
+    
+    <textarea class="form-control" rows="1" name="comment" placeholder="{{Teams.desc}}"></textarea>
+    </div>
+</form>
+  </div>
+</div>
+</div>
+</section>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

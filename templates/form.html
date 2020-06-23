@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{%block head%}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+{%endblock head%}
+{%block title%}
+Form
+{%endblock title%}
+{% block body %}
+<section class="contactus" id="contact" >
+  <div class="container headings text-center">
+    <h1 class="text-center font-weight-bold"> ITSP 2020</h1>
+    <p class="text-center text-capitalize pt-1"> Please register your team by submitting the following Form.</p>
+  </div>
+
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-md-2 offset-1">
+  <form method="post" action="/form">
+  {% csrf_token %}
+  <div class="form-group">
+   
+    <input type="text" class="form-control" name="teamname" aria-describedby="emailHelp" required autocomplete="off" placeholder="Team Name">
+    
+  </div>
+   <div class="form-group">
+   
+    <input type="text" class="form-control" name="mem1" aria-describedby="emailHelp" required autocomplete="off" placeholder="Member 1">
+    
+  </div>
+   <div class="form-group">
+   
+    <input type="text" class="form-control" name="mem2" aria-describedby="emailHelp" required autocomplete="off" placeholder="Member 2">
+    
+  </div>
+  <div class="form-group">
+   
+    <input type="email" class="form-control" name="Email1" aria-describedby="emailHelp" required autocomplete="off" placeholder="Email of Member1">
+    
+  </div>
+  <div class="form-group">
+   
+    <input type="email" class="form-control" name="Email2" aria-describedby="emailHelp" required autocomplete="off" placeholder="Email of Member2">
+    
+  </div>
+  <div class="form-group">
+   <div class="form-group">
+   
+    <input type="text" class="form-control" name="topic" aria-describedby="emailHelp" required autocomplete="off" placeholder="Topic">
+    
+  </div>
+    
+    <textarea class="form-control" rows="1" name="comment" placeholder="Some Description of Topic"></textarea>
+    </div>
+    <div class="d-flex justify-content-center form-button">
+  <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+  </div>
+</div>
+</div>
+</section>
+{% endblock body %}
